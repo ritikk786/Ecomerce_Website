@@ -1,22 +1,25 @@
 import React from 'react'
-import { Container, Navbar, Nav } from 'react-bootstrap';
+import './Header.css'
 
-const Header = () => {
+import { Container, Navbar, Nav, Button } from 'react-bootstrap';
+
+const Header = (props) => {
     return (
-        <div>
-            <Navbar    bg='primary' variant='dark'>
+        
+            <Navbar  style={{position:'sticky',top:'0',zIndex:'10'}}  bg='primary' variant='dark'>
                 <Container>
-                    <Navbar.Brand>
-                        Sharpener Store
+                    <Navbar.Brand >
+                        <h1 className='display-6'>Sharpener Store</h1>
                     </Navbar.Brand>
-                    <Nav className="me-auto" variant='light'  bg='primary' style={{marginLeft:'5rem'}}>
-                        <Nav.Link href="#home">Home</Nav.Link>
-                        <Nav.Link href="#features">Store</Nav.Link>
-                        <Nav.Link href="#pricing">About</Nav.Link>
+                    <Nav className="navlink" variant='light'  bg='primary' >
+                        <Nav.Link href="#home" style={{fontWeight:'bold',color:'white'}}>Home</Nav.Link>
+                        <Nav.Link href="#features" style={{fontWeight:'bold',color:'white'}}>Store</Nav.Link>
+                        <Nav.Link href="#pricing" style={{fontWeight:'bold',color:'white'}}>About</Nav.Link>
                     </Nav>
+                    <Button onClick={props.showcart} variant="dark">Cart</Button>
                 </Container>
             </Navbar>
-        </div>
+       
     )
 }
 export default Header;

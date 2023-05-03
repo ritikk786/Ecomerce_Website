@@ -1,6 +1,7 @@
 import React from 'react'
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import Items from './Items';
+import './Product.css'
 
 const Product = (props) => {
     const productsArr = [
@@ -49,6 +50,14 @@ const Product = (props) => {
 
     return (
         <div>
+            <div className='genricsdiv'>
+            <h1 className='gentext'>The Generics</h1>
+            </div>
+            <div>
+            <marquee width="100%" className='h1'>
+            <h1 >Music</h1>
+            </marquee>
+            </div>
             <Container style={{marginLeft:'13rem'}}>
                 <Row className='m-5 '>
                 

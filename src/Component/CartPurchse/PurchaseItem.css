@@ -1,0 +1,9 @@
+.image{
+    width: 5rem;
+    border-radius: 0.8rem;
+}
+.title{
+    float: right;
+    font-size: 15px;
+    margin-left: 3px;
+}

@@ -1,0 +1,10 @@
+.amounttext{
+    font-size: xx-large;
+    font-family: math;
+}
+.amount{
+    float: right;
+    color: green;
+    font-size: xxx-large;
+    font-family: monospace;
+}
