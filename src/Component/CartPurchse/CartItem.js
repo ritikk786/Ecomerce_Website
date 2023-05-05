@@ -1,4 +1,5 @@
-import React from 'react'
+import React,{useContext} from 'react'
+import Cartcontext from '../../Store/cart-context';
 import { Table } from 'react-bootstrap';
 import PurchaseItem from './PurchaseItem';
 import './CartItem.css'
@@ -43,11 +44,14 @@ import './CartItem.css'
         }
         
         ];
-        let totalamount=0;
-        cartElements.forEach((item)=>{
-            totalamount = totalamount+ item.quantity*item.price;
+        const ctx=useContext(Cartcontext)
+        console.log(ctx)
+        // let totalamount=0;
+
+        // ctx.cartItems.forEach((item)=>{
+        //     totalamount = totalamount+ item.quantity*item.price;
           
-        })
+        // })
        
   return (
     <div>
@@ -65,7 +69,7 @@ import './CartItem.css'
         </Table>
         <div>
             <span className='amounttext'>Total Amount</span>
-            <span className='amount'>{totalamount}</span>
+            <span className='amount'>{ctx.totalamount}</span>
         </div>
     </div>
   )

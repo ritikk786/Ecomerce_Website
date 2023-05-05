@@ -4,3 +4,19 @@
     font-family: sans-serif;
     padding-right: 14%
 }
+.cartnumber{
+    padding-left: 0.5rem;
+    font-size: larger;
+    font-family: cursive;
+}
+.genricsdiv{
+    background-color: darkgrey;
+    height: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+.gentext{
+    font-family: auto;
+    font-size: 4rem
+}
