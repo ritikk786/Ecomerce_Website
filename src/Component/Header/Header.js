@@ -27,9 +27,9 @@ const Header = (props) => {
                         <h1 className='display-6'>Sharpener Store</h1>
                     </Navbar.Brand>
                     <Nav className="navlink" variant='light'  bg='primary' >
-                        <Nav.Link href="#home" style={{fontWeight:'bold',color:'white'}}>Home</Nav.Link>
-                        <Nav.Link href="#features" onClick={showproduct} style={{fontWeight:'bold',color:'white'}}>Store</Nav.Link>
-                        <Nav.Link href="#pricing" onClick={showabout}  style={{fontWeight:'bold',color:'white'}}>About</Nav.Link>
+                        <Nav.Link href="/" style={{fontWeight:'bold',color:'white'}}>Home</Nav.Link>
+                        <Nav.Link href="/store"  style={{fontWeight:'bold',color:'white'}}>Store</Nav.Link>
+                        <Nav.Link href="/about"   style={{fontWeight:'bold',color:'white'}}>About</Nav.Link>
                     </Nav>
                     <Button onClick={props.showcart} variant="dark">Cart Item:<span className='cartnumber'>{numberofCartItem}</span></Button>
                 </Container>
