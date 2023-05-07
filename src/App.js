@@ -7,6 +7,7 @@ import  Cart  from './Component/CartPurchse/Cart';
 import Contextprovider from './Store/Contextprovider';
 import About from './Component/About/About';
 import Homepage from './Component/Pages/Homepage';
+import Footer from './Component/Pages/Footer';
 
 
 const router = createBrowserRouter([
@@ -44,9 +45,9 @@ function App() {
     
      <Header showcart={cartshownhandler} />
      <RouterProvider router={router}/>
+     <Footer/>
      {/* {showabout && <About/>} */}
      {/* {showproduct && <Product/> } */}
-     
      
     </Contextprovider>
   );

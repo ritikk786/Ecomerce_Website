@@ -54,8 +54,8 @@ import './CartItem.css'
         // })
        
   return (
-    <div>
-        <Table>
+    <div className='able'>
+        <Table >
             <thead>
                 <tr>
                     <th>Item</th>
@@ -64,6 +64,7 @@ import './CartItem.css'
                 </tr>
             </thead>
             <tbody>
+                
                 <PurchaseItem/>
             </tbody>
         </Table>
