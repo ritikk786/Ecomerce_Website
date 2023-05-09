@@ -5,7 +5,7 @@ import classes from './Footer.module.css'
 
  const Footer = () => {
   return (
-   <footer>
+   <footer style={{marginTop: '44.6vh'}}>
      <Navbar style={{position:'sticky',bottom:'0',zIndex:'10'}} bg="primary" variant="dark">
         <Container>
           <Navbar.Brand href="#home" className={classes.brand}>The Generics</Navbar.Brand>

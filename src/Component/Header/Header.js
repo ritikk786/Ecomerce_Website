@@ -29,7 +29,7 @@ const Header = (props) => {
                     </Navbar.Brand>
                     <Nav className="navlink" variant='light'  bg='primary' >
                         <NavLink to="/" className='a'  activeClassName={'active'}>Home</NavLink>
-                        <NavLink to="/store" className='a' >Store</NavLink>
+                        <NavLink to="/products" className='a' >Products</NavLink>
                         <NavLink to="/about" className='a'  >About</NavLink>
                         <NavLink to="/contact" className='a'  >Contact Us</NavLink>
                     </Nav>

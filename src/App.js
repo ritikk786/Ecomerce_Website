@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes,  } from 'react-router-dom'
 import { Button } from 'react-bootstrap';
 import Header from './Component/Header/Header';
 import Product from './Component/CartItem/Product';
@@ -10,12 +10,14 @@ import About from './Component/About/About';
 import Homepage from './Component/Pages/Homepage';
 import Footer from './Component/Pages/Footer';
 import Contactus from './Component/ContactUs/Contactus';
+import Productdetail from './Component/CartItem/Productdetail';
 
-const router = createBrowserRouter([
-  {path:'/', element:<Homepage/>},
-  {path:'/store', element:<Product/>},
-  {path:'/about', element:<About/>}
-])
+
+// const router = createBrowserRouter([
+//   {path:'/', element:<Homepage/>},
+//   {path:'/store', element:<Product/>},
+//   {path:'/about', element:<About/>}
+// ])
 
 function App() {
   const [showcart, setShowcart] = useState(false)
@@ -48,12 +50,10 @@ function App() {
      
       <Routes>
         <Route path="/" element={<Homepage />} />
-        <Route
-          path="/store"
-          element={<Product/>}
-        />
+        <Route path="/products" element={<Product/>} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contactus />} />
+        <Route path='/products/:productId' element={<Productdetail/>}/>
       </Routes>
       
       

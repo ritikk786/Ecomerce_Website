@@ -1,5 +1,6 @@
 import React,{useContext} from 'react'
 import Cartcontext from '../../Store/cart-context';
+import {NavLink} from 'react-router-dom'
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import './Item.css';
 
@@ -63,7 +64,7 @@ const Items = (props) => {
           <Card className=''>
             <Card.Img variant="top" src={item.imageUrl} />
             <Card.Body className='shadow-lg'>
-              <Card.Title>{item.title}</Card.Title>
+              <Card.Title><NavLink to={`/products/${item.title}`}>{item.title}</NavLink></Card.Title>
               <Row style={{ textAlign: 'Center' }}>
                 <Col><Card.Text>
                   {`$${item.price}`}
