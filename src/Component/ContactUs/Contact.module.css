@@ -1,0 +1,11 @@
+form{
+    border-radius: 1rem;
+    width: 50%;
+    padding: 2rem;
+    box-shadow:0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+}
+.div{
+    margin-left: 32rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}

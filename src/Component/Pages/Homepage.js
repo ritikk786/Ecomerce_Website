@@ -1,11 +1,11 @@
-import React from 'react'
+import React,{Fragment} from 'react'
 import classes from './Homepage.module.css'
 import { Button } from 'react-bootstrap';
 import Homepagedata from './Homepagedata'
 
 const Homepage = () => {
     return (
-        <>
+        <Fragment>
             <div className={classes.backgrounddiv}>
                 <div>
                     <button className={classes.album}> Get Our Latest Album</button>
@@ -38,7 +38,7 @@ const Homepage = () => {
                     </tr> */}
                 </table>
             </div>
-        </>
+        </Fragment>
     )
 }
 export default Homepage;

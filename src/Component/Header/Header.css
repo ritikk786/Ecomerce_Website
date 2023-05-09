@@ -20,3 +20,13 @@
     font-family: auto;
     font-size: 4rem
 }
+.a{
+    color: white;
+    text-decoration: none;
+    margin-right: 10px
+}
+.active{
+    color: #95bcf0;
+    padding-bottom: 0.25rem;
+    border-bottom: 4px solid #95bcf0;
+}
