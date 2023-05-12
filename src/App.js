@@ -1,16 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, Fragment, useContext } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Route, Routes,  } from 'react-router-dom'
 import { Button } from 'react-bootstrap';
 import Header from './Component/Header/Header';
 import Product from './Component/CartItem/Product';
 import Cart from './Component/CartPurchse/Cart';
-import Contextprovider from './Store/Contextprovider';
+import Cartcontext from './Store/cart-context';
 import About from './Component/About/About';
 import Homepage from './Component/Pages/Homepage';
 import Footer from './Component/Pages/Footer';
 import Contactus from './Component/ContactUs/Contactus';
 import Productdetail from './Component/CartItem/Productdetail';
+import AuthForm from './Component/Auth/AuthForm';
 
 
 // const router = createBrowserRouter([
@@ -21,18 +22,12 @@ import Productdetail from './Component/CartItem/Productdetail';
 
 function App() {
   const [showcart, setShowcart] = useState(false)
-  // const [showabout, setShowabout]=useState(false)
-  // const [showproduct, setShowproduct]=useState(false)
+  
+  const ctx=useContext(Cartcontext);
 
-  // const showAbouthandler=()=>{
-  //   setShowabout(true)
-  //   setShowproduct(false)
-  // }
-
-  // const showProducthandler=()=>{
-  //   setShowproduct(true)
-  //   setShowabout(false)
-  // }
+  
+  console.log('user login state before',ctx.idToken)
+      console.log('user login state',ctx.userLoggedIn)
 
   const cartshownhandler = () => {
     setShowcart(true)
@@ -41,19 +36,34 @@ function App() {
     setShowcart(false)
   }
 
-
+  
   return (
-    <Contextprovider>
+    <Fragment>
       {showcart && <Cart showcart={cartnotshownhandler} />}
 
       <Header showcart={cartshownhandler} />
      
       <Routes>
+      {/* <Route path='/'  element= {ctx.userLoggedIn ? <Homepage/> : <AuthForm/> }/> */}
         <Route path="/" element={<Homepage />} />
-        <Route path="/products" element={<Product/>} />
+
+        {!ctx.userLoggedIn &&  <Route path='/auth' element={<AuthForm/>}/>}
+        
+
+        {/* <Route path='*' element={<AuthForm/>}/> */}
+
+        <Route path='/products'  element= {ctx.userLoggedIn ? <Product/> : <AuthForm/> }/>
+        {/* <Route path="/products" element={<Product/>} /> */}
+
+
+        {/* <Route path='/about'  element= {ctx.userLoggedIn ? <About/> : <AuthForm/> }/> */}
         <Route path="/about" element={<About />} />
+
+        {/* <Route path='/contact'  element= {ctx.userLoggedIn ? <Contactus/> : <AuthForm/> }/> */}
         <Route path="/contact" element={<Contactus />} />
-        <Route path='/products/:productId' element={<Productdetail/>}/>
+
+        <Route path='/products/:productId'  element= {ctx.userLoggedIn ? <Productdetail/> : <AuthForm/> }/>
+        {/* <Route path='/products/:productId' element={<Productdetail/>}/> */}
       </Routes>
       
       
@@ -61,7 +71,7 @@ function App() {
       <Footer />
 
 
-    </Contextprovider>
+    </Fragment>
   );
 }
 

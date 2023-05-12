@@ -2,8 +2,22 @@ import React, { useState } from 'react'
 import Cartcontext from './cart-context';
 
  const Contextprovider = (props) => {
+    const tokefromlocalst = localStorage.getItem('token')
+    const [idToken, setIdToken]=useState(tokefromlocalst)
     const [cartItems,setCartItems]=useState([])
     const [totalamount, setTotalamount]=useState('0')
+
+    const userLoggedIn = !!idToken;
+
+    const saveidToken =(token)=>{
+        setIdToken(token)
+        localStorage.setItem('token',token)
+    }
+
+    const logouttoken = ()=>{
+        localStorage.removeItem('token')
+        setIdToken(null)
+    }
 
     const addItemtocart = (item)=>{
         const totalupdatedamount = Number(totalamount) + item.price;
@@ -61,10 +75,15 @@ import Cartcontext from './cart-context';
 
 
     const cartcontext = {
+        idToken:idToken,
+        saveidToken:saveidToken,
+        userLoggedIn:userLoggedIn,
+        logouttoken:logouttoken,
         totalamount:totalamount,
         cartItems:cartItems,
         addItemhandler:addItemtocart,
         deleteItemhandler:deleteItem,
+        
     }
   return (
     <Cartcontext.Provider value={cartcontext}>

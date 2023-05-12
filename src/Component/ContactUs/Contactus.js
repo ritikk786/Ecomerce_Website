@@ -1,13 +1,15 @@
 import React, { Fragment, useRef } from 'react'
 import { Form,Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import classes from './Contact.module.css'
 const Contactus = () =>  {
   const name=useRef()
   const email=useRef()
   const phone=useRef()
-
+  const navigate = useNavigate();
   const submithandler= async (e)=>{
     e.preventDefault()
+    
     const data={
       name:name.current.value,
       email:email.current.value,
@@ -24,6 +26,7 @@ const Contactus = () =>  {
     name.current.value='';
     email.current.value='';
     phone.current.value='';
+    navigate("/");
   }
     return (
         <div className={classes.div}>
