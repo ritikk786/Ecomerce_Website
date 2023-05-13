@@ -17,7 +17,11 @@ import { Button } from 'react-bootstrap';
              <tr>
              <td><span><img  src={item.imageUrl} className='image'/></span ><span className='title'>{item.title}</span></td>
              <td>{item.price}</td>
-             <td><span><Button className='btn-sm' variant="outline-primary">{item.quantity}</Button></span><span> <Button onClick={()=>ctx.deleteItemhandler(item.id)} variant="danger" className='btn-sm'>{item.quantity>1?'-':'Remove'}</Button>{' '}</span></td>
+             <td><span> <Button onClick={()=>ctx.deleteItemhandler(item.id)} variant="danger" className='btn-sm'>-</Button>{' '}</span>
+             <span><Button className='btn-sm' variant="outline-primary">{item.quantity}</Button></span>
+             <span> <Button onClick={()=>ctx.addItemhandler(item)} variant="success" className='btn-sm'>+</Button>{' '}</span>
+             </td>
+             
          </tr>
         ))}
         </>

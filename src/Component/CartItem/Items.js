@@ -52,6 +52,7 @@ const Items = (props) => {
 
   const addItem=(item)=>{
     let updatedItem={...item,quantity:1}
+    console.log('updatedItem', updatedItem)
     ctx.addItemhandler(updatedItem)
   }
   

@@ -61,8 +61,8 @@ const AuthForm = () => {
         if(!singinresponse.ok){
           throw new Error ('Authentication failed !')
         }
-        console.log(data.idToken)
-        ctxidToken.saveidToken(data.idToken)
+        console.log('data item',data.email)
+        ctxidToken.saveidToken(data)
         navigate('/')
        
       }

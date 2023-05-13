@@ -29,8 +29,9 @@ function App() {
   console.log('user login state before',ctx.idToken)
       console.log('user login state',ctx.userLoggedIn)
 
-  const cartshownhandler = () => {
+  const cartshownhandler = async () => {
     setShowcart(true)
+   
   }
   const cartnotshownhandler = () => {
     setShowcart(false)

@@ -46,12 +46,12 @@ import './CartItem.css'
         ];
         const ctx=useContext(Cartcontext)
         console.log(ctx)
-        // let totalamount=0;
+        let totalamount=0;
 
-        // ctx.cartItems.forEach((item)=>{
-        //     totalamount = totalamount+ item.quantity*item.price;
+        ctx.cartItems.forEach((item)=>{
+            totalamount = totalamount+ item.quantity*item.price;
           
-        // })
+        })
        
   return (
     <div className='able'>
@@ -70,7 +70,7 @@ import './CartItem.css'
         </Table>
         <div>
             <span className='amounttext'>Total Amount</span>
-            <span className='amount'>{ctx.totalamount}</span>
+            <span className='amount'>{totalamount}</span>
         </div>
     </div>
   )

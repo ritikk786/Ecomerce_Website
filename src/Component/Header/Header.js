@@ -12,15 +12,15 @@ import { Container, Navbar, Nav, Button } from 'react-bootstrap';
 const Header = (props) => {
     const navigate = useNavigate();
     const crtCTX = useContext(Cartcontext)
-    const numberofCartItem = crtCTX.cartItems.reduce((crtNumber,item)=>{
-        return (crtNumber + item.quantity)
-      },0)
-      const showabout=()=>{
-       props.showabout();
-      }
-      const showproduct=()=>{
-        props.showproduct();
-      }
+    let numberofCartItem;
+    if(crtCTX.cartItems){
+
+         numberofCartItem = crtCTX.cartItems.reduce((crtNumber,item)=>{
+            return (crtNumber + item.quantity)
+          },0)
+          
+    }
+    
       const logout=()=>{
         if(crtCTX.userLoggedIn){
 
